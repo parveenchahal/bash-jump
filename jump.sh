@@ -1,14 +1,14 @@
 declare -A jumpmap
 if [ -z "$1" ]
 then
-  echo "jumpmap file path is not supplied."
-else
-  while read line; do
-    k="$(cut -d':' -f1 <<< $line)"
-    v="$(cut -d':' -f2 <<< $line)"
-    jumpmap[$k]=$v
-  done < $1
+  set "/etc/profile.d/jump.d/jumpmap"
 fi
+
+while read line; do
+  k="$(cut -d':' -f1 <<< $line)"
+  v="$(cut -d':' -f2 <<< $line)"
+  jumpmap[$k]=$v
+done < $1
 
 j()
 {
