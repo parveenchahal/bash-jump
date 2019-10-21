@@ -24,3 +24,21 @@ j()
     fi
   fi
 }
+
+v()
+{
+  if [ -z "$1" ]
+  then
+    echo "No argument supplied."
+  else
+    if [ -z "${jumpmap[$1]}" ]
+    then
+      echo "jump not defined :("
+    elif [ -f "${jumpmap[$1]}" ]
+    then
+      vim ${jumpmap[$1]}
+    else
+      echo "${jumpmap[$1]} is not a file"
+    fi
+  fi
+}

@@ -3,3 +3,4 @@ pc:/home/pc
 e:/etc
 ts:/mnt/datadisk0/TestServerNodeJS
 r:/root
+nf:/mnt/datadisk0/nginx.conf
